@@ -44,7 +44,11 @@ class _AnimationImageState extends State<AnimationImage>
           height: animation.value,
           width: animation.value,
           color: Colors.transparent,
-          child: Image.asset(widget.imageUrl),
+          child: Image.asset(
+            widget.imageUrl,
+            height: 250,
+            width: 250,
+          ),
         ),
         tween: Tween<double>(begin: 0, end: 1),
         duration: Duration(seconds: 3),

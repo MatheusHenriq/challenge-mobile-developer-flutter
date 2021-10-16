@@ -16,8 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    setState(() {
-      controllerSplash.timerFunction();
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      setState(() {
+        controllerSplash.timerFunction();
+      });
     });
     super.initState();
   }
@@ -27,8 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/movie.png'),
-          fit: BoxFit.fill,
+          image: AssetImage('assets/images/movie.jpg'),
+          fit: BoxFit.cover,
         ),
       ),
       child: Center(
