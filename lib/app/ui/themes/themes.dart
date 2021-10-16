@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:obifilmes/app/utils/textstyles.dart';
 
 const kLightThemeTextColor = Colors.black;
+const kDarkThemeTextColor = Colors.white;
 
 class Themes {
   static final appLightTheme = ThemeData.light().copyWith(
@@ -38,6 +39,7 @@ class Themes {
       ),
     ),
     primaryColor: Color(0xffFFE4E1),
+    hoverColor: Color(0xffFFE7E1),
     brightness: Brightness.dark,
     highlightColor: Color(0xffffffff),
     hintColor: Color(0xff000000),
@@ -46,40 +48,41 @@ class Themes {
   static final appDarkTheme = ThemeData.dark().copyWith(
     textTheme: TextTheme(
       headline1: TextStyles.heading1.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       headline2: TextStyles.heading2.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       headline3: TextStyles.heading3.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       headline4: TextStyles.heading4.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       headline5: TextStyles.heading5.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       headline6: TextStyles.heading6.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       subtitle1: TextStyles.subtitle1.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       subtitle2: TextStyles.subtitle2.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       bodyText1: TextStyles.bodyText1.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
       bodyText2: TextStyles.bodyText2.apply(
-        color: kLightThemeTextColor,
+        color: kDarkThemeTextColor,
       ),
     ),
-    primaryColor: Color(0xff7c7d8f),
-    brightness: Brightness.dark,
-    highlightColor: Color(0xffffffff),
-    hintColor: Color(0xff000000),
-    cardColor: Color(0xff020D3F),
+    primaryColor: Color(0xff2C2624),
+    hoverColor: Color(0xff45342F),
+    brightness: Brightness.light,
+    highlightColor: Color(0xff000000),
+    hintColor: Color(0xffffffff),
+    cardColor: Color(0xff445C5C),
   );
 }

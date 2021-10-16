@@ -30,6 +30,7 @@ class MovieInformation extends StatelessWidget {
             )),
       ),
       body: Container(
+        color: Theme.of(context).cardColor,
         padding: EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(

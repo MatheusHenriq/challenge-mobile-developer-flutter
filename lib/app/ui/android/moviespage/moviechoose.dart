@@ -5,15 +5,15 @@ import 'package:obifilmes/app/controllers/moviecontroller.dart';
 import 'package:obifilmes/app/ui/android/moviespage/loadingpage.dart';
 import 'package:obifilmes/app/ui/android/moviespage/widgets/moviecontent.dart';
 
-class MoviesContentPage extends StatefulWidget {
+class MoviesChoose extends StatefulWidget {
   int? index;
-  MoviesContentPage({Key? key, this.index}) : super(key: key);
+  MoviesChoose({Key? key, this.index}) : super(key: key);
 
   @override
-  _MoviesContentPage createState() => _MoviesContentPage();
+  _MoviesChoosePage createState() => _MoviesChoosePage();
 }
 
-class _MoviesContentPage extends State<MoviesContentPage> {
+class _MoviesChoosePage extends State<MoviesChoose> {
   final controller = Get.put(MovieController());
   final HomePageController controllerPage = Get.find();
 

@@ -9,6 +9,7 @@ void main() {
     title: 'ObiFilmes',
     theme: Themes.appLightTheme,
     themeMode: ThemeMode.light,
+    darkTheme: Themes.appDarkTheme,
     initialRoute: Routes.SPLASH,
     getPages: AppPages.routes,
   ));

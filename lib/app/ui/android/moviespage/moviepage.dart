@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:obifilmes/app/controllers/moviecontroller.dart';
 
-import 'moviecontent.dart';
+import 'moviechoose.dart';
 
 class MoviePage extends StatefulWidget {
   MoviePage({Key? key}) : super(key: key);
@@ -67,7 +67,7 @@ class _MoviePageState extends State<MoviePage> {
                   ),
                 ),
                 Expanded(
-                  child: MoviesContentPage(index: pageMovieIndex),
+                  child: MoviesChoose(index: pageMovieIndex),
                 ),
               ],
             ),
