@@ -28,7 +28,8 @@ class MovieController extends GetxController {
   }
 
   ///change the favorite status in MovieInformation
-  changeFavorite(int resultIndex, int listId, int idMovie, bool isSave) {
+  changeFavorite(int resultIndex, int listId, int idMovie, bool isSave,
+      String urlImage, String title) {
     checkFavorite.value = isSave;
     int getMovieIndex = 0;
     if (saveMovieList.length > 0) {
@@ -42,7 +43,8 @@ class MovieController extends GetxController {
     checkFavorite.value
         ? saveMovieList.add(
             SaveMovieModel(
-              favorite: true,
+              title: title,
+              urlImage: urlImage,
               resultIndex: resultIndex,
               listId: listId,
               idMovie: idMovie,

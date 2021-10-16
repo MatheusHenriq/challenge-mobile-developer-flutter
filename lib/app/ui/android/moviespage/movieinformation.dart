@@ -45,6 +45,9 @@ class _MovieInformationState extends State<MovieInformation> {
                   controller.movieListId.value,
                   controller.movieList.results![widget.movieIndex!].id!,
                   isSave!,
+                  controller
+                      .movieList.results![widget.movieIndex!].poster_path!,
+                  controller.movieList.results![widget.movieIndex!].title!,
                 );
               },
               child: Icon(

@@ -3,12 +3,15 @@ class SaveMovieModel {
   int? listId;
   int? idMovie;
   int? currentIndex;
-  bool? favorite;
+  String? urlImage;
+  String? title;
+
   SaveMovieModel({
     this.resultIndex,
     this.listId,
     this.currentIndex,
-    this.favorite,
+    this.urlImage,
     this.idMovie,
+    this.title,
   });
 }
