@@ -5,7 +5,7 @@ import 'package:obifilmes/app/ui/android/favoritepage/favoritecontent.dart';
 
 class FavoritePage extends StatelessWidget {
   FavoritePage({Key? key}) : super(key: key);
-  final MovieController controller = Get.put(MovieController());
+  final MovieController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
