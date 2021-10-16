@@ -7,12 +7,15 @@ class MovieController extends GetxController {
   var checkFavorite = false.obs;
   var movieListId = 3.obs;
 
+  ///increment index of listId, when you increment this index, you will reload the page and search the new page with this index.
   addListId() {
     movieListId.value = movieListId.value + 1;
     update(['changescreen']);
   }
 
+  ///decrement index of listId, when you decrement this index, you will reload the page and search the new page with this index.
   subListId() {
+    ///if index is 1, you cannot go to 0 because the minimum index of listId is 1.
     if (movieListId.value == 1) {
       movieListId.value = 1;
     } else {
@@ -21,10 +24,12 @@ class MovieController extends GetxController {
     update(['changescreen']);
   }
 
+  ///change the favorite status in MovieInformation
   changeFavorite() {
     checkFavorite.toggle();
   }
 
+  ///api consume
   searchMovies(int listId) async {
     final Dio dio = Dio();
     final response = await dio.get(

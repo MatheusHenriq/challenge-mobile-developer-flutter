@@ -20,13 +20,14 @@ class BottomNavBarWidget extends StatelessWidget {
           curve: Curves.ease,
         );
       },
-      selectedItemColor: Colors.black,
+      selectedItemColor: Theme.of(context).hintColor,
       unselectedFontSize: 10,
       selectedLabelStyle: TextStyles.smallStyle.apply(color: Colors.black),
       items: [
         BottomNavigationBarItem(
           icon: Icon(
             Icons.home,
+            color: Colors.black,
           ),
           label: 'Home',
           activeIcon: Icon(
