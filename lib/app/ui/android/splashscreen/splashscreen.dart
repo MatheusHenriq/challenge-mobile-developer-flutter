@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:obifilmes/app/controllers/splashscreencontroller.dart';
 import 'package:obifilmes/app/ui/android/splashscreen/widgets/animatedimage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -9,6 +11,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final SplashScreenController controllerSplash =
+      Get.put(SplashScreenController());
+
+  @override
+  void initState() {
+    setState(() {
+      controllerSplash.timerFunction();
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
