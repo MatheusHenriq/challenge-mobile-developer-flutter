@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/moviecontent.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/moviecontroller.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/moviepage.dart';
+import 'package:obifilmes/app/controllers/moviecontroller.dart';
+
+import 'moviecontent.dart';
 
 class MoviePage extends StatefulWidget {
   MoviePage({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _MoviePageState extends State<MoviePage> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder(
+    return GetBuilder<MovieController>(
         id: 'changescreen',
         init: controller,
         builder: (_) {

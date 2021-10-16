@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/apresentation/homepage/homepage_controller.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/loadingpage.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/moviecontroller.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/widgets/moviecontent.dart';
+import 'package:obifilmes/app/controllers/homepage_controller.dart';
+import 'package:obifilmes/app/controllers/moviecontroller.dart';
+import 'package:obifilmes/app/ui/android/moviespage/loadingpage.dart';
+import 'package:obifilmes/app/ui/android/moviespage/widgets/moviecontent.dart';
 
 class MoviesContentPage extends StatefulWidget {
   int? index;

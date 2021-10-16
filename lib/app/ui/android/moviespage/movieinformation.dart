@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/moviecontroller.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/widgets/textandescription.dart';
+import 'package:obifilmes/app/controllers/moviecontroller.dart';
+import 'package:obifilmes/app/ui/android/moviespage/widgets/textandescription.dart';
 
 class MovieInformation extends StatelessWidget {
   final int? movieIndex;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/apresentation/descriptionpage/descriptionpage.dart';
-import 'package:obifilmes/modules/apresentation/homepage/homepage_controller.dart';
-import 'package:obifilmes/modules/apresentation/homepage/widgets/bottom_bar_bar_widget.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/moviepage.dart';
+import 'package:obifilmes/app/ui/android/descriptionpage/descriptionpage.dart';
+import 'package:obifilmes/app/controllers/homepage_controller.dart';
+import 'package:obifilmes/app/ui/android/homepage/widgets/bottom_bar_bar_widget.dart';
+import 'package:obifilmes/app/ui/android/moviespage/moviepage.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);

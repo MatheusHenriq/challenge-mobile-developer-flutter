@@ -1,19 +1,8 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/domain/entities/movie_entity.dart';
-import 'package:obifilmes/modules/domain/erros/errors.dart';
-import 'package:obifilmes/modules/domain/repositories/repositories.dart';
-import 'package:obifilmes/modules/domain/usecases/search_movies_usecase.dart';
-import 'package:obifilmes/modules/infra/datasource/datasources.dart';
-import 'package:obifilmes/modules/infra/models/movie_model.dart';
+import 'package:obifilmes/app/models/movie_model.dart';
 
 class MovieController extends GetxController {
-  final usecase = Get.find<SearchMovies>();
-  final datasource = Get.find<SearchMovieRepository>();
-  final externall = Get.find<SearchMovieDataSource>();
-
   late MovieModel movieList;
   var checkFavorite = false.obs;
   var movieListId = 3.obs;
@@ -45,16 +34,15 @@ class MovieController extends GetxController {
       movieList = movie;
     } else {
       if (response.statusCode == 403) {
-        throw InvalidListId(
-            msg: 'O programa não tem mais direito de acessar o conteúdo! :/');
+        throw Exception(
+            'O programa não tem mais direito de acessar o conteúdo! :/');
       }
       if (response.statusCode == 400) {
-        throw InvalidListId(msg: 'O servidor não entendeu sua requisição! :/');
+        throw Exception('O servidor não entendeu sua requisição! :/');
       }
       if (response.statusCode == 404) {
-        throw InvalidListId(
-            msg:
-                'O servidor não está conseguindo encontrar o recurso solicitado! :/');
+        throw Exception(
+            'O servidor não está conseguindo encontrar o recurso solicitado! :/');
       }
     }
   }

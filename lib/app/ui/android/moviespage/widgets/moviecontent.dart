@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/apresentation/moviespage/movieinformation.dart';
+import '../movieinformation.dart';
 
 class MovieContent extends StatelessWidget {
   final String? urlImage;

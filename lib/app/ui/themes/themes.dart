@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:obifilmes/utils/textstyles.dart';
+import 'package:obifilmes/app/utils/textstyles.dart';
 
 const kLightThemeTextColor = Colors.black;
 

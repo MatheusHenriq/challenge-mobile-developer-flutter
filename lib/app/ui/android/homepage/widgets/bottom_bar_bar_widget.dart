@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/modules/apresentation/homepage/homepage_controller.dart';
-import 'package:obifilmes/utils/textstyles.dart';
+import 'package:obifilmes/app/controllers/homepage_controller.dart';
+import 'package:obifilmes/app/utils/textstyles.dart';
 
 class BottomNavBarWidget extends StatelessWidget {
   BottomNavBarWidget({Key? key}) : super(key: key);
