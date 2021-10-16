@@ -13,7 +13,7 @@ class MoviePage extends StatefulWidget {
 
 class _MoviePageState extends State<MoviePage> {
   final MovieController controller = Get.put(MovieController());
-  int pageMovieIndex = 1;
+  int pageMovieIndex = 3;
   @override
   void initState() {
     super.initState();

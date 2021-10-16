@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:obifilmes/modules/domain/entities/movie_entity.dart';
 import 'package:obifilmes/modules/domain/erros/errors.dart';
 import 'package:obifilmes/modules/domain/repositories/repositories.dart';
 import 'package:obifilmes/modules/domain/usecases/search_movies_usecase.dart';
@@ -15,7 +16,7 @@ class MovieController extends GetxController {
 
   late MovieModel movieList;
   var checkFavorite = false.obs;
-  var movieListId = 1.obs;
+  var movieListId = 3.obs;
 
   addListId() {
     movieListId.value = movieListId.value + 1;
@@ -34,21 +35,6 @@ class MovieController extends GetxController {
   changeFavorite() {
     checkFavorite.toggle();
   }
-
-  // Future searchMovie(int listId) async {
-  //   print('1');
-  //   var validator = await usecase(3);
-  //   print('2');
-  //   if (validator.isRight()) {
-  //     print('3');
-  //     var datasourcecheck = await datasource.searchMovie(3);
-  //     if (datasourcecheck.isRight()) {
-  //       var request = await externall.searchMovie(3);
-  //       movieList = request;
-  //       print(movieList);
-  //     }
-  //   }
-  // }
 
   searchMovies(int listId) async {
     final Dio dio = Dio();

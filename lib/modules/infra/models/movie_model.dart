@@ -26,7 +26,7 @@ class MovieModel implements MoviesEntity {
       id: map['id'],
       page: map['page'],
       results:
-          List<Results>.from(map['results']?.map((x) => Results.fromMap(x))),
+          List<Results>.from(map['results'].map((x) => Results.fromMap(x))),
     );
   }
 

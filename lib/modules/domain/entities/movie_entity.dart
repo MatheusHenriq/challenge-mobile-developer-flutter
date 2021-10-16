@@ -39,12 +39,12 @@ class Results {
       'id': id,
       'overview': overview,
       'popularity': popularity,
-      'posterPath': poster_path,
-      'releaseDate': release_date,
+      'poster_path': poster_path,
+      'release_date': release_date,
       'title': title,
       'video': video,
-      'voteAverage': vote_average,
-      'voteCount': vote_count,
+      'vote_average': vote_average,
+      'vote_count': vote_count,
     };
   }
 
