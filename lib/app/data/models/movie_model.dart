@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:obifilmes/app/models/movie_entity.dart';
+import 'package:obifilmes/app/data/models/movie_entity.dart';
 
 class MovieModel implements MoviesEntity {
   int? id;

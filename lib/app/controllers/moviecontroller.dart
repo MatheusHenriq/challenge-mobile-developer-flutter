@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/app/models/movie_model.dart';
-import 'package:obifilmes/app/models/savemovie_model.dart';
+import 'package:obifilmes/app/data/models/movie_model.dart';
+import 'package:obifilmes/app/data/models/savemovie_model.dart';
 
 class MovieController extends GetxController {
   late MovieModel movieList;
