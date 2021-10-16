@@ -15,6 +15,7 @@ class MovieInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).cardColor,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {},
@@ -30,7 +31,6 @@ class MovieInformation extends StatelessWidget {
             )),
       ),
       body: Container(
-        color: Theme.of(context).cardColor,
         padding: EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(
