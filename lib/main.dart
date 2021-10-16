@@ -10,7 +10,7 @@ void main() {
     theme: Themes.appLightTheme,
     themeMode: ThemeMode.light,
     darkTheme: Themes.appDarkTheme,
-    initialRoute: Routes.SPLASH,
+    initialRoute: Routes.HOME,
     getPages: AppPages.routes,
   ));
 }

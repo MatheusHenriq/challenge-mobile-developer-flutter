@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:obifilmes/app/models/movie_model.dart';
+import 'package:obifilmes/app/models/savemovie_model.dart';
 
 class MovieController extends GetxController {
   late MovieModel movieList;
   var checkFavorite = false.obs;
   var movieListId = 3.obs;
+
+  var saveMovieList = <SaveMovieModel>[];
 
   ///increment index of listId, when you increment this index, you will reload the page and search the new page with this index.
   addListId() {
@@ -25,8 +28,42 @@ class MovieController extends GetxController {
   }
 
   ///change the favorite status in MovieInformation
-  changeFavorite() {
-    checkFavorite.toggle();
+  changeFavorite(int resultIndex, int listId, int idMovie, bool isSave) {
+    checkFavorite.value = isSave;
+    int getMovieIndex = 0;
+    if (saveMovieList.length > 0) {
+      for (int i = 0; i < saveMovieList.length; i++) {
+        if (idMovie == saveMovieList[i].idMovie) {
+          getMovieIndex = i;
+        }
+      }
+    }
+
+    checkFavorite.value
+        ? saveMovieList.add(
+            SaveMovieModel(
+              favorite: true,
+              resultIndex: resultIndex,
+              listId: listId,
+              idMovie: idMovie,
+              currentIndex: saveMovieList.length,
+            ),
+          )
+        : saveMovieList.removeAt(getMovieIndex);
+    update(['saveMoveList']);
+  }
+
+  bool checkSaveMovie(int idMovie) {
+    if (saveMovieList.length > 0) {
+      for (int i = 0; i < saveMovieList.length; i++) {
+        if (idMovie == saveMovieList[i].idMovie) {
+          update(['saveMoveList']);
+          return true;
+        }
+      }
+    }
+    update(['saveMoveList']);
+    return false;
   }
 
   ///api consume
