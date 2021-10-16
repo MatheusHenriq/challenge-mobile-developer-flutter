@@ -48,7 +48,6 @@ class MovieController extends GetxController {
               resultIndex: resultIndex,
               listId: listId,
               idMovie: idMovie,
-              currentIndex: saveMovieList.length,
             ),
           )
         : saveMovieList.removeAt(getMovieIndex);

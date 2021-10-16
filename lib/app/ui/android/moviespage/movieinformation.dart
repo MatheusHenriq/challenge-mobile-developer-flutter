@@ -16,6 +16,7 @@ class MovieInformation extends StatefulWidget {
 
 class _MovieInformationState extends State<MovieInformation> {
   final MovieController controller = Get.find();
+
   bool? isSave;
   @override
   void initState() {
