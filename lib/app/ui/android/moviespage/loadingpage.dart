@@ -6,7 +6,7 @@ class LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: Theme.of(context).cardColor,
       child: Center(
         child: CircularProgressIndicator(
           color: Theme.of(context).primaryColor,
