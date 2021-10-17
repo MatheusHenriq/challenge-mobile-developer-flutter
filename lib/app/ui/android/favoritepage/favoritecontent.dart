@@ -23,18 +23,13 @@ class FavoriteContent extends StatefulWidget {
 
 class _FavoriteContentState extends State<FavoriteContent> {
   final MovieController controller = Get.find();
-  @override
-  void initState() {
-    setState(() {
-      controller.searchMovies(widget.listId!);
-    });
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MovieController>(
+        initState: (_) {
+          controller.searchMovies(widget.listId!);
+        },
         init: controller,
         id: 'changescreen',
         builder: (_) {

@@ -18,16 +18,11 @@ class _MoviesChoosePage extends State<MoviesChoose> {
   final HomePageController controllerPage = Get.find();
 
   @override
-  void initState() {
-    setState(() {
-      controller.searchMovies(widget.index!);
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return GetBuilder(
+      initState: (_) {
+        controller.searchMovies(widget.index!);
+      },
       id: 'changescreen',
       init: controller,
       builder: (_) {

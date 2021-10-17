@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:obifilmes/app/data/database/db.dart';
 import 'package:obifilmes/app/data/models/movie_model.dart';
 import 'package:obifilmes/app/data/models/savemovie_model.dart';
 import 'package:rive/rive.dart';
@@ -10,6 +11,13 @@ class MovieController extends GetxController {
   var checkFavorite = false.obs;
   var movieListId = 3.obs;
   List<SaveMovieModel>? saveMovieList = [];
+  Db dbMovie = Db.instance;
+  bool? isSave = false;
+
+  changeSaveStatus() {
+    isSave = !isSave!;
+    update(['saveMoveList']);
+  }
 
   ///increment index of listId, when you increment this index, you will reload the page and search the new page with this index.
   addListId() {
@@ -28,9 +36,13 @@ class MovieController extends GetxController {
     update(['changescreen']);
   }
 
+  getSaveMovies() async {
+    saveMovieList = await dbMovie.getFavorites();
+  }
+
   ///change the favorite status in MovieInformation
   changeFavorite(int resultIndex, int listId, int idMovie, bool isSave,
-      String urlImage, String title) {
+      String urlImage, String title) async {
     checkFavorite.value = isSave;
     int getMovieIndex = 0;
     if (saveMovieList!.length > 0) {
@@ -42,6 +54,15 @@ class MovieController extends GetxController {
     }
 
     if (checkFavorite.value) {
+      await dbMovie.add(
+        SaveMovieModel(
+          title: title,
+          urlImage: urlImage,
+          resultIndex: resultIndex,
+          listId: listId,
+          idMovie: idMovie,
+        ),
+      );
       saveMovieList!.add(
         SaveMovieModel(
           title: title,
@@ -68,6 +89,7 @@ class MovieController extends GetxController {
         ),
       );
     } else {
+      await dbMovie.delete(idMovie);
       saveMovieList!.removeAt(getMovieIndex);
       Get.snackbar(
         title,

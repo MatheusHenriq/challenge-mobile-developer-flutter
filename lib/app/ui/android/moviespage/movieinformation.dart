@@ -17,19 +17,13 @@ class MovieInformation extends StatefulWidget {
 class _MovieInformationState extends State<MovieInformation> {
   final MovieController controller = Get.find();
 
-  bool? isSave;
-  @override
-  void initState() {
-    setState(() {
-      isSave = controller.checkSaveMovie(
-          controller.movieList.results![widget.movieIndex!].id!);
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MovieController>(
+        initState: (_) {
+          controller.isSave = controller.checkSaveMovie(
+              controller.movieList.results![widget.movieIndex!].id!);
+        },
         id: 'saveMoveList',
         init: controller,
         builder: (_) {
@@ -38,14 +32,15 @@ class _MovieInformationState extends State<MovieInformation> {
             floatingActionButton: FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
               onPressed: () {
-                setState(() {
-                  isSave = !isSave!;
-                });
+                // setState(() {
+                //   isSave = !isSave!;
+                // });
+                controller.changeSaveStatus();
                 controller.changeFavorite(
                   widget.movieIndex!,
                   controller.movieListId.value,
                   controller.movieList.results![widget.movieIndex!].id!,
-                  isSave!,
+                  controller.isSave!,
                   controller
                       .movieList.results![widget.movieIndex!].poster_path!,
                   controller.movieList.results![widget.movieIndex!].title!,
@@ -53,14 +48,8 @@ class _MovieInformationState extends State<MovieInformation> {
               },
               child: Icon(
                 Icons.favorite,
-                color: isSave! ? Colors.pink[400] : Colors.grey[400],
+                color: controller.isSave! ? Colors.pink[400] : Colors.grey[400],
               ),
-              //   Obx(
-              // () => Icon(
-              //   Icons.favorite,
-              //   color: controller.checkFavorite.value
-              //       ? Colors.pink[400]
-              //       : Colors.grey[400],
             ),
             body: Container(
               padding: EdgeInsets.all(20.0),

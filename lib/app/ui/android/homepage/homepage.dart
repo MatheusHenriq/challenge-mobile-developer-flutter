@@ -17,6 +17,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomePageController>(
+        initState: (_) {
+          controllerMovie.getSaveMovies();
+        },
         id: 'pageview',
         init: controller,
         builder: (_) {

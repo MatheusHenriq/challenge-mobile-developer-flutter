@@ -13,14 +13,6 @@ class MoviePage extends StatefulWidget {
 
 class _MoviePageState extends State<MoviePage> {
   final MovieController controller = Get.put(MovieController());
-  int pageMovieIndex = 3;
-  @override
-  void initState() {
-    super.initState();
-    setState(() {
-      pageMovieIndex = controller.movieListId.value;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +33,8 @@ class _MoviePageState extends State<MoviePage> {
                         onPressed: () {
                           controller.subListId();
                           setState(() {
-                            pageMovieIndex = controller.movieListId.value;
+                            controller.movieListId.value =
+                                controller.movieListId.value;
                           });
                         },
                         icon: Icon(
@@ -54,7 +47,8 @@ class _MoviePageState extends State<MoviePage> {
                         onPressed: () {
                           controller.addListId();
                           setState(() {
-                            pageMovieIndex = controller.movieListId.value;
+                            controller.movieListId.value =
+                                controller.movieListId.value;
                           });
                         },
                         icon: Icon(
@@ -67,7 +61,7 @@ class _MoviePageState extends State<MoviePage> {
                   ),
                 ),
                 Expanded(
-                  child: MoviesChoose(index: pageMovieIndex),
+                  child: MoviesChoose(index: controller.movieListId.value),
                 ),
               ],
             ),
