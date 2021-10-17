@@ -14,6 +14,7 @@ class MovieController extends GetxController {
   Db dbMovie = Db.instance;
   bool? isSave = false;
 
+  /// method that change isSave, this variable is called on MovieInformation to set value of favoriteIcon
   changeSaveStatus() {
     isSave = !isSave!;
     update(['saveMoveList']);
@@ -36,6 +37,7 @@ class MovieController extends GetxController {
     update(['changescreen']);
   }
 
+  ///when this method is called, all data in db goes to sabemovelist.
   getSaveMovies() async {
     saveMovieList = await dbMovie.getFavorites();
   }
@@ -53,6 +55,8 @@ class MovieController extends GetxController {
       }
     }
 
+    /// dbMovie.add is to add data to db, and saveMovieList!.add is to add data in a dynamic vector, this vector is available only when application is running
+    /// dbMovie persists data to the database when the application is closed
     if (checkFavorite.value) {
       await dbMovie.add(
         SaveMovieModel(
@@ -72,6 +76,8 @@ class MovieController extends GetxController {
           idMovie: idMovie,
         ),
       );
+
+      ///snackbar to show a message if the movie was saved or not
       Get.snackbar(
         title,
         'Movie moved to favorites tab!',
@@ -112,6 +118,7 @@ class MovieController extends GetxController {
     update(['saveMoveList']);
   }
 
+  ///check if idmovie is already in the vector
   bool checkSaveMovie(int idMovie) {
     if (saveMovieList!.length > 0) {
       for (int i = 0; i < saveMovieList!.length; i++) {

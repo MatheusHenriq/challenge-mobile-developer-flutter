@@ -7,11 +7,14 @@ class HomePageController extends GetxController {
   PageController pageController = PageController();
   var isDarkMode = false;
   var textTheme = 'Light Theme';
+
+  ///change page in bottomappbar
   changePage(int page) {
     initalPageIndex.value = page;
     update(['pageview']);
   }
 
+  ///change thememode and texttheme
   changeThemeMode() {
     isDarkMode = !isDarkMode;
     if (!isDarkMode) {

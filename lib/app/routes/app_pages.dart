@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:obifilmes/app/ui/android/descriptionpage/descriptionpage.dart';
+import 'package:obifilmes/app/ui/android/favoritepage/favoritepage.dart';
 import 'package:obifilmes/app/ui/android/homepage/homepage.dart';
 import 'package:obifilmes/app/ui/android/moviespage/moviepage.dart';
 import 'package:obifilmes/app/ui/android/splashscreen/splashscreen.dart';
@@ -22,6 +23,10 @@ abstract class AppPages {
     GetPage(
       name: Routes.SPLASH,
       page: () => SplashScreen(),
+    ),
+    GetPage(
+      name: Routes.FAVORITE,
+      page: () => FavoritePage(),
     ),
   ];
 }
