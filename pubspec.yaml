@@ -15,6 +15,8 @@ dependencies:
   get: ^4.3.8
   rive: ^0.7.32
   dio: ^4.0.0
+  sqflite: ^2.0.0+4
+  path_provider: ^2.0.5
   cupertino_icons: ^1.0.2
 
 

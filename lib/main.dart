@@ -5,6 +5,7 @@ import 'package:obifilmes/app/routes/app_routes.dart';
 import 'package:obifilmes/app/ui/themes/themes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(GetMaterialApp(
     title: 'ObiFilmes',
     theme: Themes.appLightTheme,
