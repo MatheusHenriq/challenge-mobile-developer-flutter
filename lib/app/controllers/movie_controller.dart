@@ -1,13 +1,15 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:obifilmes/app/data/models/movie_model.dart';
 import 'package:obifilmes/app/data/models/savemovie_model.dart';
+import 'package:rive/rive.dart';
 
 class MovieController extends GetxController {
   late MovieModel movieList;
   var checkFavorite = false.obs;
   var movieListId = 3.obs;
-  var saveMovieList = <SaveMovieModel>[];
+  List<SaveMovieModel>? saveMovieList = [];
 
   ///increment index of listId, when you increment this index, you will reload the page and search the new page with this index.
   addListId() {
@@ -31,33 +33,67 @@ class MovieController extends GetxController {
       String urlImage, String title) {
     checkFavorite.value = isSave;
     int getMovieIndex = 0;
-    if (saveMovieList.length > 0) {
-      for (int i = 0; i < saveMovieList.length; i++) {
-        if (idMovie == saveMovieList[i].idMovie) {
+    if (saveMovieList!.length > 0) {
+      for (int i = 0; i < saveMovieList!.length; i++) {
+        if (idMovie == saveMovieList?[i].idMovie) {
           getMovieIndex = i;
         }
       }
     }
 
-    checkFavorite.value
-        ? saveMovieList.add(
-            SaveMovieModel(
-              title: title,
-              urlImage: urlImage,
-              resultIndex: resultIndex,
-              listId: listId,
-              idMovie: idMovie,
-            ),
-          )
-        : saveMovieList.removeAt(getMovieIndex);
+    if (checkFavorite.value) {
+      saveMovieList!.add(
+        SaveMovieModel(
+          title: title,
+          urlImage: urlImage,
+          resultIndex: resultIndex,
+          listId: listId,
+          idMovie: idMovie,
+        ),
+      );
+      Get.snackbar(
+        title,
+        'Movie moved to favorites tab!',
+        colorText: Colors.white,
+        backgroundColor: Colors.green,
+        icon: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(24.0)),
+          child: RiveAnimation.asset(
+            'assets/images/movie_favorite.riv',
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+          ),
+        ),
+      );
+    } else {
+      saveMovieList!.removeAt(getMovieIndex);
+      Get.snackbar(
+        title,
+        'Movie removed from  favorites tab!',
+        colorText: Colors.white,
+        backgroundColor: Colors.red,
+        icon: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(24.0)),
+          child: RiveAnimation.asset(
+            'assets/images/movie_unfavorite.riv',
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+          ),
+        ),
+      );
+    }
 
     update(['saveMoveList']);
   }
 
   bool checkSaveMovie(int idMovie) {
-    if (saveMovieList.length > 0) {
-      for (int i = 0; i < saveMovieList.length; i++) {
-        if (idMovie == saveMovieList[i].idMovie) {
+    if (saveMovieList!.length > 0) {
+      for (int i = 0; i < saveMovieList!.length; i++) {
+        if (idMovie == saveMovieList![i].idMovie) {
           update(['saveMoveList']);
           return true;
         }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/app/controllers/moviecontroller.dart';
+import 'package:obifilmes/app/controllers/movie_controller.dart';
 import 'package:obifilmes/app/ui/android/moviespage/widgets/textandescription.dart';
 
 class MovieInformation extends StatefulWidget {

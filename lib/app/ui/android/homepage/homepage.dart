@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/app/controllers/moviecontroller.dart';
+import 'package:obifilmes/app/controllers/movie_controller.dart';
 import 'package:obifilmes/app/ui/android/descriptionpage/descriptionpage.dart';
 import 'package:obifilmes/app/controllers/homepage_controller.dart';
 import 'package:obifilmes/app/ui/android/favoritepage/favoritepage.dart';

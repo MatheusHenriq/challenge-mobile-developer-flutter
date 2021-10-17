@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/app/controllers/splashscreencontroller.dart';
+import 'package:obifilmes/app/controllers/splashscreen_controller.dart';
 import 'package:obifilmes/app/ui/android/splashscreen/widgets/animatedimage.dart';
 
 class SplashScreen extends StatefulWidget {

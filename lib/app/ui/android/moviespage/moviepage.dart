@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:obifilmes/app/controllers/moviecontroller.dart';
+import 'package:obifilmes/app/controllers/movie_controller.dart';
 
 import 'moviechoose.dart';
 

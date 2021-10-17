@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:obifilmes/app/controllers/homepage_controller.dart';
-import 'package:obifilmes/app/controllers/moviecontroller.dart';
+import 'package:obifilmes/app/controllers/movie_controller.dart';
 import 'package:obifilmes/app/ui/android/moviespage/loadingpage.dart';
 import 'package:obifilmes/app/ui/android/moviespage/widgets/moviecontent.dart';
 
@@ -39,13 +39,13 @@ class _MoviesChoosePage extends State<MoviesChoose> {
               value = Container(
                 color: Theme.of(context).cardColor,
                 child: ListView.builder(
-                    itemCount: controller.movieList.results!.length,
+                    itemCount: controller.movieList.results?.length,
                     itemBuilder: (ctx, index) {
                       return MovieContent(
                         movieIndex: index,
-                        title: controller.movieList.results![index].title,
+                        title: controller.movieList.results?[index].title,
                         urlImage:
-                            controller.movieList.results![index].poster_path,
+                            controller.movieList.results?[index].poster_path,
                       );
                     }),
               );
