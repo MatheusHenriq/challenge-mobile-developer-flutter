@@ -9,7 +9,9 @@ import 'package:rive/rive.dart';
 class MovieController extends GetxController {
   late MovieModel movieList;
   var checkFavorite = false.obs;
-  var movieListId = 3.obs;
+
+  ///this variables is equal to the api listId;
+  var movieListId = 1.obs;
   List<SaveMovieModel>? saveMovieList = [];
   Db dbMovie = Db.instance;
   bool? isSave = false;
