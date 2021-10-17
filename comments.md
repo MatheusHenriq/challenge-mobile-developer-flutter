@@ -11,7 +11,7 @@
     - path_provider => para salvar os itens no diretório escolhido no celular (no caso da aplicação, foi utilizado o getApplicationDocumentsDirectory).
 
 # O que você melhoraria se tivesse mais tempo: 
-    Eu melhoraria o design das telas que fiz, e tentaria arrumar animações mais bonitas, porém não sou muito bom nessas áreas referente a design, então espero que gostem do que foi implementado :D !
+    Eu melhoraria o design das telas que fiz, e tentaria arrumar animações mais bonitas, porém não sou muito bom nessas áreas referente a design, então espero que gostem do que foi implementado :D!
 
 # Observações: 
     O flutter não consegue mapear um json muito grande, ou seja, a api que foi dada tinha muitos dados, mesmo que os dados requiridos fossem poucos, foi necessário uma triagem de dados, não mapeando os que não seriam utilizados(Ex: o campo created_by não foi mapeado pois os campos deles não seriam utilizados).
