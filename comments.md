@@ -22,6 +22,8 @@
 
     Peço perdão pelos commits um pouco atrasados no projeto, não é um costume meu, mas infelizmente comecei a codar(empolgado) e esqueci de dar os commits na primeira parte do projeto.
 
+    A api tem um pequeno problema, as vezes o dado vote_average da lista result vezes é inteiro vezes é double, sendo necessária a tipagem desse campo.
+
     
     
 

@@ -43,7 +43,7 @@ class Results {
       'release_date': release_date,
       'title': title,
       'video': video,
-      'vote_average': vote_average,
+      'vote_average': vote_average!.toDouble(),
       'vote_count': vote_count,
     };
   }
@@ -57,7 +57,7 @@ class Results {
       map['release_date'],
       map['title'],
       map['video'],
-      map['vote_average'],
+      map['vote_average'].toDouble(),
       map['vote_count'],
     );
   }
