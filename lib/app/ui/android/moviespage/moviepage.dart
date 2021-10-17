@@ -32,10 +32,6 @@ class _MoviePageState extends State<MoviePage> {
                       IconButton(
                         onPressed: () {
                           controller.subListId();
-                          setState(() {
-                            controller.movieListId.value =
-                                controller.movieListId.value;
-                          });
                         },
                         icon: Icon(
                           Icons.arrow_back,
@@ -46,10 +42,6 @@ class _MoviePageState extends State<MoviePage> {
                       IconButton(
                         onPressed: () {
                           controller.addListId();
-                          setState(() {
-                            controller.movieListId.value =
-                                controller.movieListId.value;
-                          });
                         },
                         icon: Icon(
                           Icons.arrow_forward,
