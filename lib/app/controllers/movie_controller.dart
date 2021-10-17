@@ -83,6 +83,7 @@ class MovieController extends GetxController {
       Get.snackbar(
         title,
         'Movie moved to favorites tab!',
+        duration: Duration(milliseconds: 800),
         colorText: Colors.white,
         backgroundColor: Colors.green,
         icon: Container(
@@ -102,6 +103,7 @@ class MovieController extends GetxController {
       Get.snackbar(
         title,
         'Movie removed from  favorites tab!',
+        duration: Duration(milliseconds: 800),
         colorText: Colors.white,
         backgroundColor: Colors.red,
         icon: Container(
