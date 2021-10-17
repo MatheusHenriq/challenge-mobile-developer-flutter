@@ -26,9 +26,11 @@ class MovieContent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Expanded(
-            child: Image.network(
-              'https://image.tmdb.org/t/p/w500$urlImage',
-              fit: BoxFit.contain,
+            child: ClipRect(
+              child: Image.network(
+                'https://image.tmdb.org/t/p/w500$urlImage',
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           SizedBox(

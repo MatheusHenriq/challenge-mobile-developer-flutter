@@ -31,7 +31,7 @@ class _FavoriteContentState extends State<FavoriteContent> {
           controller.searchMovies(widget.listId!);
         },
         init: controller,
-        id: 'changescreen',
+        id: 'saveMovieList',
         builder: (_) {
           return Container(
             decoration: BoxDecoration(
@@ -44,9 +44,11 @@ class _FavoriteContentState extends State<FavoriteContent> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Expanded(
-                  child: Image.network(
-                    'https://image.tmdb.org/t/p/w500${widget.urlImage}',
-                    fit: BoxFit.contain,
+                  child: ClipRRect(
+                    child: Image.network(
+                      'https://image.tmdb.org/t/p/w500${widget.urlImage}',
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
                 SizedBox(
