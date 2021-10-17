@@ -1,16 +1,19 @@
-# obifilmes
+# Informações sobre como rodar o aplicativo!
+    Para rodar o aplictivo é necessário ter o flutter instalado no seu computador(qualquer s.o).
 
-A new Flutter project.
+    OBS: rode o projeto em um mobile device, se utilizar no chrome ou edge não irá ter funcionalidades implementadas, pois tem pacotes no projeto que só funcionam no celular ou emulador de android.
 
-## Getting Started
+    Caso você tenha um emulador de android no seu pc:
+        Abra o emulador de android => vá pra pasta raiz do projeto flutter => abra o terminal => digite: flutter run
 
-This project is a starting point for a Flutter application.
+        obs: para checkar se seu emulador está realmente aberto e aceito como um device pelo flutter, vá no terminal e digite: flutter devices. Se o flutter estiver atualizado ele irá mostrar as opções: chrome,edge e, se tudo estiver correto com o android, o nome do seu android.
 
-A few resources to get you started if this is your first Flutter project:
+    Caso você queria rodar o aplicativo no celular:
+        Conecte o celular na sua máquina => permita que o computador acesse o celular => cheque se o seu celular está disponível como device no flutter com o comando: flutter devices no terminal.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+        Obs: caso seu celular não esteja disponível como device, siga o tutorial de um desses sites: 
+        
+        https://tecnoblog.net/277750/como-ativar-o-modo-desenvolvedor-no-android/ 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+        https://canaltech.com.br/android/como-ativar-modo-desenvolvedor-android/
+        
