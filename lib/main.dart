@@ -8,6 +8,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(GetMaterialApp(
     title: 'ObiFilmes',
+    debugShowCheckedModeBanner: false,
     theme: Themes.appLightTheme,
     themeMode: ThemeMode.light,
     darkTheme: Themes.appDarkTheme,

@@ -6,7 +6,7 @@ class HomePageController extends GetxController {
   var initalPageIndex = 0.obs;
   PageController pageController = PageController();
   var isDarkMode = false;
-  var textTheme = 'Light Theme';
+  var textTheme = 'Light Mode';
 
   ///change page in bottomappbar
   changePage(int page) {
