@@ -9,7 +9,6 @@ class FavoritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('favoritepage: ${controller.saveMovieList!.length}');
     return Container(
       color: Theme.of(context).cardColor,
       child: ListView.builder(
