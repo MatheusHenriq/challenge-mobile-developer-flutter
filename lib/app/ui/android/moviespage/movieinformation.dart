@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:obifilmes/app/controllers/homepage_controller.dart';
 import 'package:obifilmes/app/controllers/movie_controller.dart';
+import 'package:obifilmes/app/ui/android/favoritepage/favoritepage.dart';
+import 'package:obifilmes/app/ui/android/homepage/homepage.dart';
 import 'package:obifilmes/app/ui/android/moviespage/widgets/textandescription.dart';
 
 class MovieInformation extends StatefulWidget {
@@ -16,6 +19,7 @@ class MovieInformation extends StatefulWidget {
 
 class _MovieInformationState extends State<MovieInformation> {
   final MovieController controller = Get.find();
+  final HomePageController controllerPage = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +36,6 @@ class _MovieInformationState extends State<MovieInformation> {
             floatingActionButton: FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
               onPressed: () {
-                // setState(() {
-                //   isSave = !isSave!;
-                // });
                 controller.changeSaveStatus();
                 controller.changeFavorite(
                   widget.movieIndex!,
@@ -59,7 +60,15 @@ class _MovieInformationState extends State<MovieInformation> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     IconButton(
-                      onPressed: () => Get.back(),
+                      onPressed: () {
+                        if (controllerPage.initalPageIndex.value == 2) {
+                          controllerPage.pageController.jumpToPage(1);
+                          controllerPage.pageController.jumpToPage(2);
+                          Get.back();
+                        } else {
+                          Get.back();
+                        }
+                      },
                       icon: Icon(Icons.arrow_back),
                     ),
                     Center(

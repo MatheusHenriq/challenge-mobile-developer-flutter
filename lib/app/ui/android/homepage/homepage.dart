@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
             bottomNavigationBar: BottomNavBarWidget(),
             body: PageView(
               onPageChanged: controller.changePage,
-              physics: NeverScrollableScrollPhysics(),
+              physics: PageScrollPhysics(),
               controller: controller.pageController,
               children: [
                 DescriptionPage(),
