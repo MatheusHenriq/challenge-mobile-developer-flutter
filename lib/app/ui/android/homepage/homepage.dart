@@ -18,7 +18,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomePageController>(
         initState: (_) {
-          controllerMovie.getSaveMovies();
+          WidgetsBinding.instance!.addPostFrameCallback((_) {
+            controllerMovie.getSaveMovies();
+            controller.updateThemeMode();
+          });
         },
         id: 'pageview',
         init: controller,
