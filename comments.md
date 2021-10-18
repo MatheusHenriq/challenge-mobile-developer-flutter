@@ -9,6 +9,7 @@
     - Rive          => para rodar as animações .riv(dentro de assets/images/)
     - sqflite       => para utilização de um banco de dados no próprio celular, focando em salvar os dados dos filmes marcados como favoritos!
     - path_provider => para salvar os itens no diretório escolhido no celular (no caso da aplicação, foi utilizado o getApplicationDocumentsDirectory).
+    - get-storage => para salvar o tema do aplicativo.
 
 # O que você melhoraria se tivesse mais tempo: 
     Eu melhoraria o design das telas que fiz, e tentaria arrumar animações mais bonitas, porém não sou muito bom nessas áreas referente a design, então espero que gostem do que foi implementado :D!
