@@ -31,19 +31,28 @@ class _MoviesChoosePage extends State<MoviesChoose> {
           builder: (context, snapshot) {
             Widget value;
             if (snapshot.connectionState == ConnectionState.done) {
-              value = Container(
-                color: Theme.of(context).cardColor,
-                child: ListView.builder(
-                    itemCount: controller.movieList.results?.length,
-                    itemBuilder: (ctx, index) {
-                      return MovieContent(
-                        movieIndex: index,
-                        title: controller.movieList.results?[index].title,
-                        urlImage:
-                            controller.movieList.results?[index].poster_path,
-                      );
-                    }),
-              );
+              value = controller.movieList.results?.length != 0
+                  ? Container(
+                      color: Theme.of(context).cardColor,
+                      child: ListView.builder(
+                          itemCount: controller.movieList.results?.length,
+                          itemBuilder: (ctx, index) {
+                            return MovieContent(
+                              movieIndex: index,
+                              title: controller.movieList.results?[index].title,
+                              urlImage: controller
+                                  .movieList.results?[index].poster_path,
+                            );
+                          }),
+                    )
+                  : Container(
+                      child: Center(
+                        child: Text(
+                          'No movies here! :(',
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                      ),
+                    );
             } else {
               value = LoadingPage();
             }
