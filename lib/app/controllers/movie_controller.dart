@@ -137,7 +137,7 @@ class MovieController extends GetxController {
   }
 
   ///api consume
-  searchMovies(int listId) async {
+  Future searchMovies(int listId) async {
     final Dio dio = Dio();
     final response = await dio.get(
         "https://api.themoviedb.org/4/list/$listId?api_key=2c6f5ef69c079796a50dc5f4a81f449f");

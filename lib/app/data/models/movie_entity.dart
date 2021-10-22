@@ -13,15 +13,15 @@ class MoviesEntity {
 }
 
 class Results {
-  int? id;
-  String? overview;
-  double? popularity;
-  String? poster_path;
-  String? release_date;
-  String? title;
-  bool? video;
-  double? vote_average;
-  int? vote_count;
+  dynamic? id;
+  dynamic? overview;
+  dynamic? popularity;
+  dynamic? poster_path;
+  dynamic? release_date;
+  dynamic? title;
+  dynamic? video;
+  dynamic? vote_average;
+  dynamic? vote_count;
 
   Results(
       this.id,
@@ -43,7 +43,7 @@ class Results {
       'release_date': release_date,
       'title': title,
       'video': video,
-      'vote_average': vote_average!.toDouble(),
+      'vote_average': vote_average,
       'vote_count': vote_count,
     };
   }
@@ -57,7 +57,7 @@ class Results {
       map['release_date'],
       map['title'],
       map['video'],
-      map['vote_average'].toDouble(),
+      map['vote_average'],
       map['vote_count'],
     );
   }
